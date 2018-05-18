@@ -1,0 +1,12 @@
+<div *ngIf="pictures.length">
+    <div class="picture-list" [@listAnimation]="pictures.length">
+        <app-picture
+            *ngFor="let picture of pictures"
+            [picture]="picture">
+        </app-picture>
+    </div>
+</div>
+<app-loading *ngIf="loading"></app-loading>
+<div class="load-more" *ngIf="!loading">
+    <button (click)="loadMore()">Load more</button>
+</div>

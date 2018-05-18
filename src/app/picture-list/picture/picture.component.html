@@ -1,0 +1,10 @@
+<div class="col3">
+    <div class="card" [@hoverAnimation]="hoverState" (click)="visible = !visible">
+        <img class="pic" [src]="picture.thumbnailUrl" [alt]="picture.title">
+    </div>
+</div>
+<div class="backdrop" *ngIf="visible" (click)="closePopup()">
+    <div class="popup">
+        <img [src]="picture.url" [alt]="picture.title">
+    </div>
+</div>
